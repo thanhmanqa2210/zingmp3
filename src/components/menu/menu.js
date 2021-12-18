@@ -1,5 +1,5 @@
-import "../../scss/menu.scss";
-import "../../scss/logo.scss";
+import "../../css/menu.css";
+import "../../css/logo.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import {
   PerAccount,
