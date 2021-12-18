@@ -1,0 +1,17 @@
+.menu {
+    width: 16.6666%;
+    height: 100vh;
+    background-color: rgb(65, 20, 101);
+}
+
+.info-music {
+    margin: 30px 0 0 30px;
+    color: rgb(212, 212, 212);
+    font-weight: 600;
+    font-size: 15px;
+    .music-item {
+        &:hover {
+            color: #FFf;
+        }
+    }
+}
