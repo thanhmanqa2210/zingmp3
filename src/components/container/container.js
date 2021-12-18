@@ -1,6 +1,6 @@
 import Header from "./header/header.container";
 import HomePage from "./body_contents/homepage.container";
-import "../../scss/container.scss"
+import "../../css/container.css"
 function Container() {
   return (
     <div className="container">
