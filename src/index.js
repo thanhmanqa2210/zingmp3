@@ -7,8 +7,9 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <PlayMusic />
+    {/* <App />
+    <PlayMusic /> */}
+    <h2>XIn chào các</h2>
   </React.StrictMode>,
   document.getElementById("root")
 );
