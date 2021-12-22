@@ -69,7 +69,6 @@ function SlideShow() {
     setInterval(() => {
       dispatch(AUTO_SONG);
     }, 5000);
-    return clearTimeout();
   }, []);
   // const [state,dispatch]=useReducer(reducer,initState);
   return (

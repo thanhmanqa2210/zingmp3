@@ -15,6 +15,7 @@ function Menu() {
         <div className="img-logo-link">
           <Link to="/">
             <img
+              onClick={() => {}}
               className="img-logo-zingmp3"
               src="https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg"
               alt=""
