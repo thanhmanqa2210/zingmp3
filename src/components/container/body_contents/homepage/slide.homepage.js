@@ -1,4 +1,35 @@
-import { useState, useEffect } from "react";
+import { useReducer, useEffect } from "react";
+const initState = [0, 1, 2];
+const PREV_SONG = "PREV";
+const NEXT_SONG = "NEXT";
+const AUTO_SONG = "AUTO";
+const reducer = (states, action) => {
+  switch (action) {
+    case PREV_SONG:
+      return states.map((state) => {
+        if (state === 0) {
+          state = 5;
+        } else {
+          state--;
+        }
+        return state;
+      });
+    case NEXT_SONG:
+    case AUTO_SONG:
+      return states.map((state) => {
+        if (state === 5) {
+          state = 0;
+        } else {
+          state++;
+        }
+        return state;
+      });
+
+    default:
+      break;
+  }
+};
+
 function SlideShow() {
   let imgSlideShows = [
     {
@@ -32,47 +63,30 @@ function SlideShow() {
       img: "https://photo-zmp3.zadn.vn/banner/9/8/c/e/98ce001d63b2bf3796b8e8a4334fcb9a.jpg",
     },
   ];
-  const [count, setCount] = useState(1);
-  const [count1, setCount1] = useState(2);
-  const [count2, setCount2] = useState(3);
-  const [index, setIndex] = useState({
-    img1: 0,
-    img2: 1,
-    img3: 2,
-  });
 
+  const [index, dispatch] = useReducer(reducer, initState);
   useEffect(() => {
-    setTimeout(() => {
-      setIndex({
-        img1: count,
-        img2: count1,
-        img3: count2,
-      });
-      count === imgSlideShows.length - 1 ? setCount(0) : setCount(count + 1);
-      count1 === imgSlideShows.length - 1
-        ? setCount1(0)
-        : setCount1(count1 + 1);
-      count2 === imgSlideShows.length - 1
-        ? setCount2(0)
-        : setCount2(count2 + 1);
-    }, 3000);
-  }, [count2]);
-
+    setInterval(() => {
+      dispatch(AUTO_SONG);
+    }, 5000);
+    return clearTimeout();
+  }, []);
+  // const [state,dispatch]=useReducer(reducer,initState);
   return (
     <div className="slide-show">
-      <div className="slide-show--left">
+      <div onClick={() => dispatch(PREV_SONG)} className="slide-show--left">
         <i className="fas fa-chevron-left" />
       </div>
       <div className="slide-show--item">
-        <img src={imgSlideShows[index.img1].img} alt="" />
+        <img src={imgSlideShows[index[0]].img} alt="1" />
       </div>
       <div className="slide-show--item">
-        <img src={imgSlideShows[index.img2].img} alt="" />
+        <img src={imgSlideShows[index[1]].img} alt="2" />
       </div>
       <div className="slide-show--item">
-        <img src={imgSlideShows[index.img3].img} alt="" />
+        <img src={imgSlideShows[index[2]].img} alt="3" />
       </div>
-      <div className="slide-show--right">
+      <div onClick={() => dispatch(NEXT_SONG)} className="slide-show--right">
         <i className="fas fa-chevron-right" />
       </div>
     </div>
