@@ -9,7 +9,8 @@ import os.path
 from tornado.options import define, options
 import pymongo
 
-define("port", default=8888, help="run on the given port", type=int)
+port = int(os.getenv('PORT', 8080))
+#define("port", default=8888, help="run on the given port", type=int)
 
 conn = pymongo.MongoClient()
 db = conn.example
@@ -110,7 +111,7 @@ class Application(tornado.web.Application):
 
 def main():
     tornado.options.parse_command_line()
-    Application().listen(options.port)
+    Application().listen(port)
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":
