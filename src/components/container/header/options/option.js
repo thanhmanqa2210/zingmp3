@@ -65,10 +65,10 @@ function ThemeTopic({ display }, displayoff) {
   let [background, setBackgr] = useState(theme.images[0]);
   let [displays, setDis] = useState("none");
   useEffect(() => {
-    display.display==='flex'?setDis('flex'):setDis('none');
+    display.display === "flex" ? setDis("flex") : setDis("none");
   }, [display.display]);
   let Div = styled.div`
-    display: ${displays ==='flex'?'flex':'none'};
+    display: ${displays === "flex" ? "flex" : "none"};
     position: fixed;
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
@@ -124,7 +124,7 @@ function ThemeTopic({ display }, displayoff) {
                   }}
                   onClick={() => {
                     setBackgr(theme.images[themeItem.id]);
-                    setDis('none');
+                    setDis("none");
                   }}
                 >
                   áp dụng
@@ -151,7 +151,11 @@ function Topic() {
   };
   return (
     <div
-      onClick={() => displays.display==='none'?setDisplay({ display: "flex" }):setDisplay({ display: "none" })}
+      onClick={() =>
+        displays.display === "none"
+          ? setDisplay({ display: "flex" })
+          : setDisplay({ display: "none" })
+      }
       className="option-item topic"
       datatype="Chủ đề"
     >
@@ -180,7 +184,17 @@ function Setting() {
     </div>
   );
 }
+
+// User
+
+function LoginUser() {
+  return <div></div>;
+}
 function User() {
-  return <div className="option-item user"></div>;
+  return (
+    <div className="option-item user">
+      <LoginUser></LoginUser>
+    </div>
+  );
 }
 export { Topic, Upload, Setting, User, ThemeTopic };

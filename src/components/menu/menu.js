@@ -1,11 +1,11 @@
 import "../../css/menu.css";
 import "../../css/logo.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import {
   PerAccount,
   Explore,
-  Radio,
   ZingChart,
+  Radio,
   Follow,
 } from "./info_music/infoMusic.menu";
 function Menu() {
@@ -22,14 +22,25 @@ function Menu() {
             />
           </Link>
         </div>
+
+        <div className="info-music">
+          <Link to="/person">
+            <PerAccount />
+          </Link>
+          <Link to="/homepage">
+            <Explore />
+          </Link>
+          <Link to="/zingchart">
+            <ZingChart />
+          </Link>
+          <Link to="/radio">
+            <Radio />
+          </Link>
+          <Link to="/follow">
+            <Follow />
+          </Link>
+        </div>
       </Router>
-      <div className="info-music">
-        <PerAccount></PerAccount>
-        <Explore></Explore>
-        <ZingChart></ZingChart>
-        <Radio></Radio>
-        <Follow></Follow>
-      </div>
     </div>
   );
 }
