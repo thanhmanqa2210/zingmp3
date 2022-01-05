@@ -1,6 +1,15 @@
 .App {
-    background: url(https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.4/static/media/bg-zma.0cc0a7e9.svg);
+    /* background: url(https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.4/static/media/bg-zma.0cc0a7e9.svg); */
     display: flex;
+}
+
+.App .backgr-app {
+    background: url(https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.4/static/media/bg-zma.0cc0a7e9.svg);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -9999;
 }
 
 .App-header {
