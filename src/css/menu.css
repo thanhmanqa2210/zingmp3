@@ -17,5 +17,8 @@
   font-weight: 600;
   font-size: 15px;
   cursor: pointer; }
-  .info-music .music-item:hover {
-    color: #FFf; }
+  .info-music .music-item {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .info-music .music-item:hover {
+      color: #FFf; }

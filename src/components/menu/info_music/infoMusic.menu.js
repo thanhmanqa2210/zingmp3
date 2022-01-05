@@ -1,22 +1,27 @@
-
+import styled from 'styled-components';
+const TitleSpan=styled.span`
+font-size:20px;
+`;
 function PerAccount() {
   return (
     <div className="music-item">
       
-      <span>Cá Nhân</span>
+      <TitleSpan>Cá Nhân</TitleSpan>
     </div>
   );
 }
 function Explore() {
-  return <div className="music-item">Khám Phá</div>;
+  return <div className="music-item">
+    <TitleSpan>Khám Phá</TitleSpan>
+    </div>;
 }
 function ZingChart() {
-  return <div className="music-item">#zingchart</div>;
+  return <div className="music-item"><TitleSpan>#zingchart</TitleSpan></div>;
 }
 function Radio() {
-  return <div className="music-item">Radio</div>;
+  return <div className="music-item"><TitleSpan>Radio</TitleSpan></div>;
 }
 function Follow() {
-  return <div className="music-item">Theo dõi</div>;
+  return <div className="music-item"><TitleSpan>Theo dõi</TitleSpan></div>;
 }
 export { PerAccount, Explore, ZingChart, Radio, Follow };
